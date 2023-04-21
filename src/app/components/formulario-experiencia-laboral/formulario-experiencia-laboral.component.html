@@ -1,0 +1,41 @@
+<div class="form-group">
+    <form [formGroup]="empleo">
+        <div class="form-group">
+            <mat-form-field class="my-custom-horizontal-margin">
+                <input matInput placeholder="Cargo" formControlName="empleo" required>
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field class="my-custom-horizontal-margin">
+                <input matInput placeholder="Funcion" formControlName="empleo" required>
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field class="my-custom-horizontal-margin">
+                <input matInput placeholder="Empresa" formControlName="empleo" required>
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field class="my-custom-horizontal-margin" >
+                <mat-label>Fecha Inicio (D/M/A)</mat-label>
+                <input matInput [matDatepicker]="pickerUno" formControlName="empleo">
+                <mat-datepicker-toggle matSuffix [for]="pickerUno"></mat-datepicker-toggle>
+                <mat-datepicker #pickerUno></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field class="my-custom-horizontal-margin" >
+                <mat-label>Fecha Fin (D/M/A)</mat-label>
+                <input matInput [matDatepicker]="pickerDos" formControlName="empleo">
+                <mat-datepicker-toggle matSuffix [for]="pickerDos"></mat-datepicker-toggle>
+                <mat-datepicker #pickerDos></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <!-- 
+            <div>
+                <button mat-button matStepperPrevious>Cerrar</button>
+                <button mat-button matStepperNext>Guardar</button>
+            </div>
+        -->
+    </form>
+</div>

@@ -1,0 +1,30 @@
+<div class="container">
+    <form [formGroup]="idioma">
+        <div class="form-group">
+            <mat-form-field class="my-custom-horizontal-margin">
+                <input matInput placeholder="Idioma" formControlName="idioma" required>
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field class="my-custom-horizontal-margin">
+                <input matInput placeholder="Conversacion" formControlName="idioma" required>
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field class="my-custom-horizontal-margin">
+                <input matInput placeholder="Escritura" formControlName="idioma" required>
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field class="my-custom-horizontal-margin">
+                <input matInput placeholder="Lectura" formControlName="idioma" required>
+            </mat-form-field>
+        </div>
+        <!-- 
+            <div>
+                <button mat-button matStepperPrevious>Cerrar</button>
+                <button mat-button matStepperNext>Guardar</button>
+            </div>
+        -->
+    </form>
+</div>
