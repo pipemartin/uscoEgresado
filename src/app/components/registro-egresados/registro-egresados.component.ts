@@ -1,6 +1,6 @@
-import { Component, OnInit, Optional } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatDialog, } from '@angular/material/dialog';
 import {map, startWith} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import { FormularioEstudiosComponent } from '../formulario-estudios/formulario-estudios.component';
@@ -27,11 +27,12 @@ export interface DialogData {
 })
 export class RegistroEgresadosComponent implements OnInit {
   constructor(
-    private _formBuilder: FormBuilder, 
+    private _formBuilder: FormBuilder,
+    private cdr: ChangeDetectorRef,
     public dialog: MatDialog, 
     public dialogDos: MatDialog, 
     public dialogTres: MatDialog,
-    public dialogCuatro: MatDialog
+    public dialogCuatro: MatDialog,
     ) {}
   options: Pais[] = [
     {name: 'Colombia'},
@@ -84,46 +85,45 @@ export class RegistroEgresadosComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(FormularioEstudiosComponent , {
       width: '500px',
-      data: {nombreEstudio: this.nombreEstudio,
-        nivel: this.nivel,
-        fecha: this.fecha
-      }
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-        console.log('The dialog was closed');
-      });
+      disableClose: true
+      
+  });
+    
+  dialogRef.afterClosed().subscribe(result => {
+        this.cdr.detectChanges();
+      }); 
   }
 
   openDialogDos(): void {
     const dialogRefDos = this.dialogDos.open(FormularioIdiomasComponent , {
       width: '500px',
+      disableClose: true
     });
 
     dialogRefDos.afterClosed().subscribe(result => {
-        console.log('The dialog was closed');
-      });
+      this.cdr.detectChanges();
+    });
   }
 
   openDialogTres(): void {
     const dialogRefTres = this.dialogTres.open(FormularioDominioInformaticaComponent , {
       width: '500px',
+      disableClose: true
     });
 
     dialogRefTres.afterClosed().subscribe(result => {
-        console.log('The dialog was closed');
-      });
+      this.cdr.detectChanges();
+    });
   }
 
   openDialogCuatro(): void {
     const dialogRefTres = this.dialogCuatro.open(FormularioExperienciaLaboralComponent , {
       width: '500px',
+      disableClose: true
     });
 
     dialogRefTres.afterClosed().subscribe(result => {
-        console.log('The dialog was closed');
+        this.cdr.detectChanges();
       });
   }
-
-
 }

@@ -37,6 +37,7 @@ import { FormularioExperienciaLaboralComponent } from './components/formulario-e
     InicioComponent, LoginEgresadosComponent, RegistroEgresadosComponent, FormularioEstudiosComponent, FormularioIdiomasComponent, FormularioDominioInformaticaComponent, FormularioExperienciaLaboralComponent
   ],
   imports: [
+    CdkStepperModule,
     BrowserModule,
     AppRouting,
     QRCodeModule,
@@ -53,7 +54,6 @@ import { FormularioExperienciaLaboralComponent } from './components/formulario-e
     BrowserAnimationsModule,
     MatCardModule,
     FormsModule,
-    CdkStepperModule,
     ReactiveFormsModule,
     MatTabsModule,
     MatExpansionModule,

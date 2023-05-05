@@ -2,19 +2,18 @@
     <form [formGroup]="dominio">
         <div class="form-group">
             <mat-form-field class="my-custom-horizontal-margin">
-                <input matInput placeholder="Programa" formControlName="dominio" required>
+                <input matInput placeholder="Programa" formControlName="dom" required>
             </mat-form-field>
         </div>
         <div class="form-group">
             <mat-form-field class="my-custom-horizontal-margin">
-                <input matInput placeholder="Manejo" formControlName="dominio" required>
+                <input matInput placeholder="Manejo" formControlName="dom" required>
             </mat-form-field>
         </div>
-        <!-- 
-            <div>
-                <button mat-button matStepperPrevious>Cerrar</button>
-                <button mat-button matStepperNext>Guardar</button>
-            </div>
-        -->
+        <div>
+            <button (click)="onNoClick()">Cerrar</button>
+            <!-- <button mat-button matStepperNext>Guardar</button> -->
+        </div>
+        
     </form>
 </div>

@@ -31,11 +31,10 @@
                 </div>
                 <div class="card-body collapse show" id="cardCollapse">
                   <p class="card-text">Apreciado estudiante, el siguiente formulario tiene como fin actualizar sus datos de contacto para que la Universidad a traves de la oficina de Egresados pueda compartir con usted información de interes a su formacion posgradual y laboral. <br> <br> La informacion consignada solamente sera utilizada para fines academicos, manteniendo la confidencialidad de los datos suministrados.</p>
-                  <button class="btn btn-primary">He leido y acepto las condiciones</button>
+                  <button class="btn btn-primary" id="minimize-btn">He leido y acepto las condiciones</button>
                 </div>
             </div>
-            <div class="">
-                
+            <div>
                 <mat-vertical-stepper [linear]="isLinear" #stepper>
                 <mat-step [stepControl]="firstFormGroup">
                     <form [formGroup]="firstFormGroup">
@@ -52,13 +51,10 @@
                         <mat-form-field class="my-custom-horizontal-margin">
                             <input matInput placeholder="Cedula de Ciudadania" formControlName="firstCtrl" required>
                         </mat-form-field>
-                        <mat-form-field class="my-custom-horizontal-margin" >
-                            <mat-label>Fecha de Nacimiento (D/M/A)</mat-label>
-                            <input matInput [matDatepicker]="picker" formControlName="firstCtrl">
-                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                            <mat-datepicker #picker></mat-datepicker>
+                        <mat-form-field class="">
+                            <input matInput type="date" placeholder="Fecha De Nacimiento" formControlName="firstCtrl" required>
                         </mat-form-field>
-                        <mat-form-field class="my-custom-horizontal-margin">
+                        <mat-form-field class="my-custom-horizontal-margin " >
                             <input matInput placeholder="Lugar de Nacimiento" formControlName="firstCtrl" required>
                         </mat-form-field>
                         <mat-form-field class="my-custom-horizontal-margin">
@@ -117,12 +113,11 @@
                         <mat-form-field class="my-custom-horizontal-margin" style="width: 70%;">
                             <input matInput placeholder="Profesión" formControlName="secondCtrl" required>
                         </mat-form-field>
-                        <mat-form-field class="my-custom-horizontal-margin" style="width: 70%;">
-                            <mat-label>Fecha De Grado (D/M/A) (Campo Reservado para Registro y control Academico)</mat-label>
-                            <input matInput [matDatepicker]="pickerDos" formControlName="secondCtrl">
-                            <mat-datepicker-toggle matSuffix [for]="pickerDos"></mat-datepicker-toggle>
-                            <mat-datepicker #pickerDos></mat-datepicker>
-                        </mat-form-field>
+                        <div>
+                            <mat-form-field class="my-custom-horizontal-margin" style="width: 95%;">
+                                <input matInput type="date" placeholder="Fecha De Grado (MM/DD/A) (Campo Reservado para Registro y control Academico)" formControlName="secondCtrl" required>
+                            </mat-form-field>
+                        </div>
                         <div>
                             <mat-form-field class="my-custom-horizontal-margin" style="width: 95%;">
                                 <input matInput placeholder="Titulo Trabajo de Grado" formControlName="secondCtrl" required>
