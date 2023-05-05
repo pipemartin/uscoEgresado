@@ -3,8 +3,6 @@ import { NgModule } from "@angular/core";
 import { AppRouting } from "./app.routing";
 import { AppComponent } from "./app.component";
 import { InicioComponent } from "./components/inicio/inicio.component";
-import { QRCodeModule } from "angularx-qrcode";
-import { ZXingScannerModule } from "@zxing/ngx-scanner";
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -34,14 +32,18 @@ import { FormularioExperienciaLaboralComponent } from './components/formulario-e
 @NgModule({
   declarations: [
     AppComponent, 
-    InicioComponent, LoginEgresadosComponent, RegistroEgresadosComponent, FormularioEstudiosComponent, FormularioIdiomasComponent, FormularioDominioInformaticaComponent, FormularioExperienciaLaboralComponent
+    InicioComponent, 
+    LoginEgresadosComponent, 
+    RegistroEgresadosComponent, 
+    FormularioEstudiosComponent, 
+    FormularioIdiomasComponent, 
+    FormularioDominioInformaticaComponent, 
+    FormularioExperienciaLaboralComponent
   ],
   imports: [
     CdkStepperModule,
     BrowserModule,
     AppRouting,
-    QRCodeModule,
-    ZXingScannerModule,
     MatDialogModule,
     MatListModule,
     MatTooltipModule,
