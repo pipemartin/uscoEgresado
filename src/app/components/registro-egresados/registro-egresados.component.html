@@ -39,7 +39,7 @@
                 <mat-step [stepControl]="firstFormGroup">
                     <form [formGroup]="firstFormGroup">
                         <ng-template matStepLabel>Datos Personales</ng-template>
-                        <mat-form-field>
+                        <mat-form-field class="my-custom-horizontal-margin">
                             <input matInput placeholder="Primer Apellido" formControlName="firstCtrl" required>
                         </mat-form-field>
                         <mat-form-field class="my-custom-horizontal-margin"> <!-- class="mat-form-field-infix"  abajo  -->
@@ -51,14 +51,14 @@
                         <mat-form-field class="my-custom-horizontal-margin">
                             <input matInput placeholder="Cedula de Ciudadania" formControlName="firstCtrl" required>
                         </mat-form-field>
-                        <mat-form-field class="">
+                        <mat-form-field class="my-custom-horizontal-margin">
                             <input matInput type="date" placeholder="Fecha De Nacimiento" formControlName="firstCtrl" required>
                         </mat-form-field>
                         <mat-form-field class="my-custom-horizontal-margin " >
                             <input matInput placeholder="Lugar de Nacimiento" formControlName="firstCtrl" required>
                         </mat-form-field>
                         <mat-form-field class="my-custom-horizontal-margin">
-                            <input type="text" placeholder="Pais de Residencia" aria-label="Pais de Residencia" matInput formControlName="firstAutocomplete" [matAutocomplete]="auto">
+                            <input type="text" placeholder="Pais de Residencia" aria-label="Pais de Residencia"  matInput formControlName="firstAutocomplete" [matAutocomplete]="auto">
                             <mat-autocomplete #auto="matAutocomplete" panelMaxHeight="5px" [displayWith]="displayFn">
                                 <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
                                 {{option.name}}
@@ -74,7 +74,7 @@
                             </mat-autocomplete>
                         </mat-form-field>
                         <mat-form-field class="my-custom-horizontal-margin">
-                            <input type="text" placeholder="Ciudad de Residencia" aria-label="Ciudad de Residencia" matInput formControlName="firstAutocomplete" [matAutocomplete]="auto">
+                            <input type="text" placeholder="Ciudad de Residencia" aria-label="Ciudad de Residencia"  matInput formControlName="firstAutocomplete" [matAutocomplete]="auto">
                             <mat-autocomplete #auto="matAutocomplete" panelMaxHeight="5px" [displayWith]="displayFn">
                                 <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
                                 {{option.name}}
@@ -82,14 +82,14 @@
                             </mat-autocomplete>
                         </mat-form-field>
                         <mat-form-field class="my-custom-horizontal-margin">
-                            <input matInput placeholder="Direccion de Residencia" formControlName="firstCtrl" required>
+                            <input matInput placeholder="Direccion de Residencia" class="usco-input-padding"  formControlName="firstCtrl" required>
                         </mat-form-field>
                         <mat-form-field class="my-custom-horizontal-margin">
-                            <input matInput placeholder="Correo Electronico" formControlName="email" required>
+                            <input matInput placeholder="Correo Electronico"  formControlName="email" required>
                             <mat-error *ngIf="this.firstFormGroup.controls['email'].invalid">{{getErrorMessage()}}</mat-error>
                         </mat-form-field>
-                        <mat-form-field>
-                            <input type="text" placeholder="Estado Civil" aria-label="Estado Civil" matInput formControlName="firstAutocomplete" [matAutocomplete]="auto">
+                        <mat-form-field class="my-custom-horizontal-margin">
+                            <input type="text" placeholder="Estado Civil" aria-label="Estado Civil"  matInput formControlName="firstAutocomplete" [matAutocomplete]="auto">
                             <mat-autocomplete #auto="matAutocomplete" panelMaxHeight="5px" [displayWith]="displayFn">
                                 <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
                                 {{option.name}}
@@ -97,10 +97,10 @@
                             </mat-autocomplete>
                         </mat-form-field>
                         <mat-form-field class="my-custom-horizontal-margin">
-                            <input matInput type="number" placeholder="Telefono (Fijo)" formControlName="firstCtrl" required>
+                            <input matInput type="number" placeholder="Telefono (Fijo)"  formControlName="firstCtrl" required>
                         </mat-form-field>
                         <mat-form-field class="my-custom-horizontal-margin">
-                            <input matInput type="number" placeholder="Telefono (Movil)" formControlName="firstCtrl" required>
+                            <input matInput type="number" placeholder="Telefono (Movil)"  formControlName="firstCtrl" required>
                         </mat-form-field>
                         <div>
                             <button mat-button matStepperNext>Next</button>
@@ -125,7 +125,7 @@
                         </div>
                         <div>
                             <mat-label>Otros Estudios Realizados: </mat-label>
-                            <button mat-raised-button (click)="openDialog()"> <mat-icon>add</mat-icon>Agregar</button>
+                            <button class="buttonUsco" mat-raised-button (click)="openDialog()"> <mat-icon>add</mat-icon>Agregar</button>
                         </div>
                         <table class="table table-bordered table-dark">
                             <tr>
@@ -139,7 +139,7 @@
                         </table>
                         <div>
                             <mat-label>Idiomas que domina: </mat-label>
-                            <button mat-raised-button (click)="openDialogDos()"> <mat-icon>add</mat-icon> Agregar</button>
+                            <button class="buttonUsco" mat-raised-button (click)="openDialogDos()"> <mat-icon>add</mat-icon> Agregar</button>
                         </div>
                         <table class="table table-bordered table-dark">
                             <tr>
@@ -152,7 +152,7 @@
                         </table>
                         <div>
                             <mat-label>Programas de informatica que domina: </mat-label>
-                            <button mat-raised-button (click)="openDialogTres()"> <mat-icon>add</mat-icon> Agregar</button>
+                            <button class="buttonUsco" mat-raised-button (click)="openDialogTres()"> <mat-icon>add</mat-icon> Agregar</button>
                         </div>
                         <table class="table table-bordered table-dark">
                             <tr>
@@ -172,7 +172,7 @@
                         <ng-template matStepLabel>Experiencia Laboral y/o Profesional</ng-template>
                         <div>
                             <mat-label>Programas de informatica que domina: </mat-label>
-                            <button mat-raised-button (click)="openDialogCuatro()"> <mat-icon>add</mat-icon> Agregar</button>
+                            <button class="buttonUsco" mat-raised-button (click)="openDialogCuatro()"> <mat-icon>add</mat-icon> Agregar</button>
                         </div>
                     </div>
                     <table class="table table-bordered table-dark">

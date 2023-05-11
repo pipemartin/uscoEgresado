@@ -78,8 +78,8 @@ export class RegistroEgresadosComponent implements OnInit {
   }
 
   getErrorMessage() {
-    return this.firstFormGroup.controls['email'].hasError('required') ? 'You must enter a value' :
-      this.firstFormGroup.controls['email'].hasError('email') ? 'Not a valid email' :
+    return this.firstFormGroup.controls['email'].hasError('required') ? 'Digitar email' :
+      this.firstFormGroup.controls['email'].hasError('email') ? 'email no valido' :
             '';
   }
   openDialog(): void {
